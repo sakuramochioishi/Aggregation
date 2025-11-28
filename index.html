@@ -75,7 +75,7 @@ async function createAccount(name='player'){
   form.append('ID', playerID);
   form.append('name', name);
 
-  const res = await fetch('https://script.google.com/macros/s/AKfycbwk3sShprPJEkht2Osizha-BIzouXTwCfYX-g2HQK97O-cBoo7_Eyd5jgC4ha-JD2M/exec',{method:'POST', body: form});
+  const res = await fetch('https://script.google.com/macros/s/AKfycbwMNzbZ-8bwUZ8X8zXlHpC3pZj2sPWdWeWTKvsU5NJTJUzbiEouXwbeWSjGw79bpbKf/exec',{method:'POST', body: form});
   const data = await res.json();
   if(data.result==='already_exists'){
     playerID = 'player_' + Math.random().toString(36).substring(2,10);
@@ -90,7 +90,7 @@ async function updatePoints(id, value){
   form.append('action','points_edit');
   form.append('ID', id);
   form.append('points', value);
-  const res = await fetch('https://script.google.com/macros/s/AKfycbwk3sShprPJEkht2Osizha-BIzouXTwCfYX-g2HQK97O-cBoo7_Eyd5jgC4ha-JD2M/exec',{method:'POST', body: form});
+  const res = await fetch('https://script.google.com/macros/s/AKfycbwMNzbZ-8bwUZ8X8zXlHpC3pZj2sPWdWeWTKvsU5NJTJUzbiEouXwbeWSjGw79bpbKf/exec',{method:'POST', body: form});
   const data = await res.json();
   return data.result;
 }
@@ -100,13 +100,13 @@ async function updateName(id, newname){
   form.append('action','name_edit');
   form.append('ID', id);
   form.append('newname', newname);
-  const res = await fetch('https://script.google.com/macros/s/AKfycbwk3sShprPJEkht2Osizha-BIzouXTwCfYX-g2HQK97O-cBoo7_Eyd5jgC4ha-JD2M/exec',{method:'POST', body: form});
+  const res = await fetch('https://script.google.com/macros/s/AKfycbwMNzbZ-8bwUZ8X8zXlHpC3pZj2sPWdWeWTKvsU5NJTJUzbiEouXwbeWSjGw79bpbKf/exec',{method:'POST', body: form});
   const data = await res.json();
   return data.result;
 }
 
 async function getDatas(){
-  const res = await fetch('https://script.google.com/macros/s/AKfycbwk3sShprPJEkht2Osizha-BIzouXTwCfYX-g2HQK97O-cBoo7_Eyd5jgC4ha-JD2M/exec?action=get_datas');
+  const res = await fetch('https://script.google.com/macros/s/AKfycbwMNzbZ-8bwUZ8X8zXlHpC3pZj2sPWdWeWTKvsU5NJTJUzbiEouXwbeWSjGw79bpbKf/exec?action=get_datas');
   return await res.json(); // {ID: {name:"", point:..., log:...}}
 }
 
